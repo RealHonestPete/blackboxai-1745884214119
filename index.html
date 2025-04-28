@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPY Price Predictor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white font-inter min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8 text-center">
+            <h1 class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 inline-block text-transparent bg-clip-text">SPY Price Predictor</h1>
+        </header>
+
+        <main class="space-y-8">
+            <!-- Price Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Prediction Card -->
+                <div class="card rounded-xl p-8 shadow-xl backdrop-blur-lg">
+                    <h2 class="text-xl font-semibold mb-6 text-blue-400">10-Minute Prediction</h2>
+                    <div id="prediction-indicator" class="text-center py-4">
+                        <div id="predicted-price" class="text-4xl font-bold mb-4">$---</div>
+                        <div id="price-prediction-change" class="text-2xl mb-4">---%</div>
+                        <div id="prediction-time" class="text-sm text-gray-400 mb-4">Predicted price in 10 minutes</div>
+                        <div id="key-factors" class="mt-4 text-sm text-gray-400">
+                            <div class="mb-2">Key Factors:</div>
+                            <div id="factor-1" class="factor-item"></div>
+                            <div id="factor-2" class="factor-item"></div>
+                            <div id="factor-3" class="factor-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Price Card -->
+                <div class="card rounded-xl p-8 shadow-xl backdrop-blur-lg">
+                    <h2 class="text-xl font-semibold mb-6 text-blue-400">Current Price</h2>
+                    <div class="text-center py-4">
+                        <div id="current-price" class="text-4xl font-bold mb-4">$---</div>
+                        <div id="price-change" class="text-2xl font-medium text-gray-300">---</div>
+                        <div id="last-update" class="text-sm text-gray-400 mt-4">Last updated: ---</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prediction Performance -->
+            <div class="card rounded-xl p-8 shadow-xl backdrop-blur-lg">
+                <h2 class="text-xl font-semibold mb-6 text-blue-400">Prediction Performance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="indicator-card">
+                        <div class="text-gray-400 mb-2">Last Hour Accuracy</div>
+                        <div id="hour-accuracy" class="indicator-value">---%</div>
+                        <div class="text-xs text-gray-500 mt-2">Based on last 6 predictions</div>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="text-gray-400 mb-2">Today's Accuracy</div>
+                        <div id="today-accuracy" class="indicator-value">---%</div>
+                        <div class="text-xs text-gray-500 mt-2">Since market open</div>
+                    </div>
+                    <div class="indicator-card">
+                        <div class="text-gray-400 mb-2">Average Error</div>
+                        <div id="avg-error" class="indicator-value">$---</div>
+                        <div class="text-xs text-gray-500 mt-2">Mean absolute error</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="text-center text-xs text-gray-500 mt-8">
+                Note: Price predictions are estimates based on historical patterns.
+                Use this as one of many tools for analysis.
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
